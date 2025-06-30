@@ -109,12 +109,12 @@ export class AdminPageComponent implements OnInit {
     });
   }
 
-  cancelReservation(id: string) {
-    this.reservationService.cancelReservation(id).subscribe(() => {
-      this.snackBar.open('Reservation Canceled!', 'Close', { duration: 3000 });
-      this.fetchReservations();
-    });
-  }
+  // cancelReservation(id: string) {
+  //   this.reservationService.cancelReservation(id).subscribe(() => {
+  //     this.snackBar.open('Reservation Canceled!', 'Close', { duration: 3000 });
+  //     this.fetchReservations();
+  //   });
+  // }
 
   blockTimeslot(timeslotId: string, date: Date) {
     this.timeslotService.blockTimeslot(timeslotId, date.toISOString().split('T')[0]).subscribe(() => {

@@ -12,12 +12,12 @@ export interface IReservation {
 }
 
 export enum IPaymentMethod {
-    cash = "Cash",
-    credit = "Credit"
+    CASH = "CASH",
+    CREDIT = "CREDIT"
 } 
 
 export enum ReservationStatus {
-    DONE = "Done",
-    CANCELLED = "Cancelled",
-    PENDING = "Pending"
+    DONE = "DONE",
+    CANCELLED = "CANCELLED",
+    PENDING = "PENDING"
 }

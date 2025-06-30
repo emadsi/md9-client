@@ -1,7 +1,23 @@
 <header class="header">
-    <h1><a  href='/'> Welcome to MD9</a></h1>
-    <div>
-      <button *ngIf="isAdminLogged" class="admin-logout" (click)="logout()">Logout</button>
-      <button class='admin-button' (click)="handleAdminLogin()">Admin Zone</button>
-    </div>
-  </header>
+  <h1><a href="/"> Welcome to MD9</a></h1>
+  <div>
+    <mat-tab-group backgroundColor="primary">
+      <mat-tab label="Reserve Field" (click)="navigateTo('/')"></mat-tab>
+      <mat-tab
+        label="Football School"
+        (click)="handleFootballAcademy()"
+      ></mat-tab>
+      <mat-tab label="Gallery" (click)="navigateTo('/gallery')"></mat-tab>
+      <mat-tab label="Contact Us" (click)="navigateTo('/contact')"></mat-tab>
+      <mat-tab label="About Us" (click)="navigateTo('/about')"></mat-tab>
+    </mat-tab-group>
+  </div>
+  <div>
+    <button *ngIf="isAdminLogged" class="admin-logout" (click)="logout()">
+      Logout
+    </button>
+    <button class="admin-button" (click)="handleAdminLogin()">
+      Admin Zone
+    </button>
+  </div>
+</header>

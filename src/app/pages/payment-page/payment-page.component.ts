@@ -52,7 +52,7 @@ export class PaymentPageComponent implements OnInit {
     }
   
     handleSubmitPayment(formData: any): void {
-      if (this.paymentMethod === 'Cash') {
+      if (this.paymentMethod === 'CASH') {
         this.paymentService.holdWithObligo(formData).subscribe({
           next: () => this.onPaymentSuccess(),
           error: () => alert('Obligo hold failed.')

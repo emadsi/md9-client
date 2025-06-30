@@ -81,9 +81,10 @@ export class ReservationPageComponent implements OnInit {
     if (this.reservationData) {
       const completedReservation = {
         ...this.reservationData,
-        confirmationNo,
+        confirmationNo, // from payment
         createdAt: new Date().toISOString(),
         status: ReservationStatus.DONE,
+        reservationId: '', // let backend assign
       };
 
       this.reservationService.createReservation(completedReservation).subscribe({
@@ -91,7 +92,7 @@ export class ReservationPageComponent implements OnInit {
           this.dialog.open(ReservationConfirmationDialogComponent, {
             data: savedReservation,
           });
-          this.successMessage = `Reservation confirmed! Confirmation No: ${savedReservation.confirmationNo}`;
+          this.successMessage = `Reservation confirmed! Confirmation No: ${savedReservation.reservationId}`;
           this.showPaymentForm = false;
           this.reservationData = null;
           this.errorMessage = ''; // Clear any previous error

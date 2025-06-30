@@ -1,5 +1,5 @@
 <div class="reservation-page">
-  <ng-container *ngIf="!showPaymentForm; else paymentForm">
+  <ng-container *ngIf="!showPaymentForm && !successMessage; else paymentForm">
     <div #reservationFormSection>
       <app-reservation-form
         *ngIf="!successMessage || !errorMessage"

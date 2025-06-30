@@ -3,6 +3,7 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable, catchError, of, throwError } from 'rxjs';
 import { IReservation } from '../../models/reservation/reservation.interface';
 import { environment } from '../../../environments/environment';
+import { Cancellation } from '../../models/cancellation/cancellation.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -20,19 +21,10 @@ export class ReservationService {
   createReservation(reservationData: IReservation): Observable<IReservation> {
     return this.http.post<IReservation>(`${this.apiUrl}/create`, reservationData).pipe(
       catchError((error) => {
-        console.error('Error fetching reservations', error);
+        console.error('Error creating reservation', error);
         return throwError(() => error); // Return empty array on failure
       })
     );
-  }
-
-  /**
-   * Cancel a reservation
-   * @param confirmationNumber The confirmation number of the reservation
-   * @returns Observable of the cancellation response
-   */
-  cancelReservation(confirmationNumber: string): Observable<Boolean> {
-    return this.http.delete<Boolean>(`${this.apiUrl}/cancel/${confirmationNumber}`);
   }
 
   /**

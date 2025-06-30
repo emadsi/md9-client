@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CancelPageComponent } from './cancel-page.component';
+import { GalleryComponent } from './gallery.component';
 
-describe('CancelReservationComponent', () => {
-  let component: CancelPageComponent;
-  let fixture: ComponentFixture<CancelPageComponent>;
+describe('GalleryComponent', () => {
+  let component: GalleryComponent;
+  let fixture: ComponentFixture<GalleryComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [CancelPageComponent]
+      declarations: [GalleryComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(CancelPageComponent);
+    fixture = TestBed.createComponent(GalleryComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

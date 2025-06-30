@@ -7,7 +7,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
 import { ReservationPageComponent } from './pages/reservation-page/reservation-page.component';
 import { PaymentPageComponent } from './pages/payment-page/payment-page.component';
-import { CancelPageComponent } from './pages/cancel-page/cancel-page.component';
+import { CancellationPageComponent } from './pages/cancellation-page/cancellation-page.component';
 import { AdminPageComponent } from './pages/admin-page/admin-page.component';
 import { ReservationFormComponent } from './components/reservation-form/reservation-form.component';
 import { PaymentFormComponent } from './components/payment-form/payment-form.component';
@@ -40,7 +40,11 @@ import { BlockDialogComponent } from './components/block-dialog/block-dialog.com
 import { MatDialogModule } from '@angular/material/dialog';
 import { AdminRegisterComponent } from './components/admin-register/admin-register.component';
 import { AuthInterceptor } from './interceptors/auth.interceptor';
-
+import { FootballSchoolComponent } from './pages/football-school/football-school.component';
+import { GalleryComponent } from './pages/gallery/gallery.component';
+import { ContactUsComponent } from './pages/contact-us/contact-us.component';
+import { AboutUsComponent } from './pages/about-us/about-us.component';
+import { MatTabsModule } from '@angular/material/tabs';
 
 @NgModule({
   declarations: [
@@ -50,7 +54,7 @@ import { AuthInterceptor } from './interceptors/auth.interceptor';
     HomePageComponent,
     ReservationPageComponent,
     PaymentPageComponent,
-    CancelPageComponent,
+    CancellationPageComponent,
     AdminPageComponent,
     ReservationFormComponent,
     PaymentFormComponent,
@@ -63,7 +67,11 @@ import { AuthInterceptor } from './interceptors/auth.interceptor';
     AddTimeslotsComponent,
     ConfirmPaymentsComponent,
     BlockDialogComponent,
-    AdminRegisterComponent
+    AdminRegisterComponent,
+    FootballSchoolComponent,
+    GalleryComponent,
+    ContactUsComponent,
+    AboutUsComponent
   ],
   imports: [
     AppRoutingModule,
@@ -80,15 +88,16 @@ import { AuthInterceptor } from './interceptors/auth.interceptor';
     MatDatepickerModule,
     MatNativeDateModule,
     MatSelectModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    MatTabsModule
   ],
   providers: [
     AdminService,
     ReservationService,
     provideHttpClient(withInterceptors([AuthInterceptor]), withFetch()),
-    provideRouter(routes),
-    provideClientHydration(),
-    provideAnimationsAsync()
+    // provideRouter(routes),
+    // provideClientHydration(),
+    // provideAnimationsAsync()
   ],
   bootstrap: [AppComponent]
 })

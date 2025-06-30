@@ -1,0 +1,19 @@
+<div class="cancellation-container" [formGroup]="cancellationForm">
+  <h2>Cancel Reservation</h2>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Reservation Number</mat-label>
+    <input matInput formControlName="reservationId" placeholder="Enter your confirmation number" />
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Reason for Cancellation</mat-label>
+    <textarea matInput formControlName="reason" rows="3"></textarea>
+  </mat-form-field>
+
+  <button mat-raised-button color="warn" (click)="cancelReservation()" [disabled]="isLoading">
+    {{ isLoading ? 'Cancelling...' : 'Cancel Reservation' }}
+  </button>
+
+  <p *ngIf="cancellationSuccess" class="success-msg">Your reservation was cancelled successfully.</p>
+</div>

@@ -20,6 +20,10 @@ export class HeaderComponent implements OnInit {
     });
   }
 
+  navigateTo(path: string) {
+    this.router.navigate([path]);
+  }
+
   handleHomePage() {
     this.router.navigate(['/']);
   }
@@ -31,6 +35,10 @@ export class HeaderComponent implements OnInit {
   logout() {
     this.authService.logout();
     this.router.navigate(['/']);
+  }
+
+  handleFootballAcademy() {
+    this.router.navigate(['/school'])
   }
 
 }
