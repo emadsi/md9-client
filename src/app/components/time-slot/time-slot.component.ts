@@ -2,11 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { TimeslotService } from '../../services/timeslot/timeslot.service';
 import { ITimeslot } from '../../models/timeslot/timeslot.interface';
 
-
 @Component({
   selector: 'app-timeslot',
-  templateUrl: './timeslot.component.html',
-  styleUrls: ['./timeslot.component.scss'],
+  templateUrl: './time-slot.component.html',
+  styleUrls: ['./time-slot.component.scss'],
   standalone: false
 })
 export class TimeslotComponent implements OnInit {

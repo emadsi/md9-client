@@ -1,5 +1,5 @@
 import { Routes } from "@angular/router";
-import { TimeslotComponent } from "./components/timeslot/timeslot.component";
+import { TimeslotComponent } from "./components/time-slot/time-slot.component";
 import { AuthGuard } from "./guards/authGuard/auth.guard";
 
 export const routes: Routes = [
@@ -38,6 +38,5 @@ export const routes: Routes = [
   },
   { path: 'about', 
     loadChildren: () => import('./pages/about-us/about-us.module').then(m => m.AboutUsModule)
-  },
-  { path: 'timeslot', component: TimeslotComponent}
+  }
 ];

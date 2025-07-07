@@ -18,12 +18,15 @@ import { CommonModule } from "@angular/common";
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { AppRoutingModule } from "../app-routing.module";
 import { RouterModule } from "@angular/router";
+import { TimeslotComponent } from "../components/time-slot/time-slot.component";
 
 @NgModule({
     declarations: [
         HeaderComponent, 
         FooterComponent, 
-        ConfirmationNumberComponent],
+        ConfirmationNumberComponent, 
+        TimeslotComponent
+    ],
     imports: [
         CommonModule,
         FormsModule,
@@ -55,6 +58,7 @@ import { RouterModule } from "@angular/router";
         HeaderComponent,
         FooterComponent,
         ConfirmationNumberComponent,
+        TimeslotComponent,
         MatSidenavModule,
         MatTableModule,
         MatDialogModule,

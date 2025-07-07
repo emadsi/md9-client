@@ -3,7 +3,6 @@ import { AppComponent } from './app.component';
 import { AdminService } from './services/admin/admin.service';
 import { ReservationService } from './services/reservation/reservation.service';
 import { provideHttpClient, withFetch, withInterceptors } from '@angular/common/http';
-import { TimeslotComponent } from './components/timeslot/timeslot.component';
 import { BlockTimeslotsComponent } from './components/block-timeslots/block-timeslots.component';
 import { AddTimeslotsComponent } from './components/add-timeslots/add-timeslots.component';
 import { ConfirmPaymentsComponent } from './components/confirm-payments/confirm-payments.component';
@@ -26,7 +25,6 @@ import { RouterModule } from '@angular/router';
 @NgModule({
   declarations: [
     AppComponent,
-    TimeslotComponent,
     BlockTimeslotsComponent,
     AddTimeslotsComponent,
     ConfirmPaymentsComponent,
