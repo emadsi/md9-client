@@ -5,7 +5,7 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build --configuration production",
-    "postbuild": "cp public/_redirects dist/md9-client/_redirects",
+    "postbuild": "cp public/_redirects dist/md9-client/browser/_redirects",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
