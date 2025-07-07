@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { TimeslotService } from '../../services/timeslot/timeslot.service';
+import { TimeslotService } from '../../services/time-slot/timeslot.service';
 import { ITimeslot } from '../../models/timeslot/timeslot.interface';
 
 @Component({
