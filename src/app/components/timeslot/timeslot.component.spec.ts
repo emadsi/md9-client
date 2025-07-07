@@ -1,5 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { TimeslotComponent } from './time-slot.component';
+import { TimeslotComponent } from './timeslot.component';
 
 describe('TimeslotComponent', () => {
   let component: TimeslotComponent;

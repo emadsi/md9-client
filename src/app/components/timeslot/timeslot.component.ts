@@ -4,8 +4,8 @@ import { ITimeslot } from '../../models/timeslot/timeslot.interface';
 
 @Component({
   selector: 'app-timeslot',
-  templateUrl: './time-slot.component.html',
-  styleUrls: ['./time-slot.component.scss'],
+  templateUrl: './timeslot.component.html',
+  styleUrls: ['./timeslot.component.scss'],
   standalone: false
 })
 export class TimeslotComponent implements OnInit {

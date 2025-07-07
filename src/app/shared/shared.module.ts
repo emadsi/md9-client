@@ -18,7 +18,7 @@ import { CommonModule } from "@angular/common";
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { AppRoutingModule } from "../app-routing.module";
 import { RouterModule } from "@angular/router";
-import { TimeslotComponent } from "../components/time-slot/time-slot.component";
+import { TimeslotComponent } from "../components/timeslot/timeslot.component";
 
 @NgModule({
     declarations: [
