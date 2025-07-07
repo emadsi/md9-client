@@ -1,9 +1,3 @@
 [build]
   command = "ng build --configuration production"
   publish = "dist/md9-client"
-
-[[plugins]]
-  package = "@netlify/angular-runtime"
-
-  [plugins.inputs]
-  skip = true
