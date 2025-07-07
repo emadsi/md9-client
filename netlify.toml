@@ -1,3 +1,8 @@
 [build]
-  command = "ng build --configuration production"
-  publish = "dist/md9-client"
+  command = "npm run build && npm run postbuild"
+  publish = "dist/md9-client/browser"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
