@@ -16,6 +16,8 @@ import { FooterComponent } from "../components/footer/footer.component";
 import { ConfirmationNumberComponent } from "../components/confirmation-number/confirmation-number.component";
 import { CommonModule } from "@angular/common";
 import { MatCheckboxModule } from '@angular/material/checkbox';
+import { AppRoutingModule } from "../app-routing.module";
+import { RouterModule } from "@angular/router";
 
 @NgModule({
     declarations: [
@@ -25,6 +27,8 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
     imports: [
         CommonModule,
         FormsModule,
+        RouterModule,
+        AppRoutingModule,
         ReactiveFormsModule,
         MatSidenavModule,
         MatTableModule,
@@ -46,6 +50,7 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
     exports: [
         CommonModule,
         FormsModule,
+        RouterModule,
         ReactiveFormsModule,
         HeaderComponent,
         FooterComponent,

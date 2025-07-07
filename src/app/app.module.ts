@@ -1,5 +1,4 @@
 import { NgModule } from '@angular/core';
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AdminService } from './services/admin/admin.service';
 import { ReservationService } from './services/reservation/reservation.service';
@@ -10,7 +9,6 @@ import { AddTimeslotsComponent } from './components/add-timeslots/add-timeslots.
 import { ConfirmPaymentsComponent } from './components/confirm-payments/confirm-payments.component';
 import { BlockDialogComponent } from './components/block-dialog/block-dialog.component';
 import { AuthInterceptor } from './interceptors/auth.interceptor';
-import { AboutUsComponent } from './pages/about-us/about-us.component';
 import { HomePageModule } from './pages/home-page/home-page.module';
 import { ReservationPageModule } from './pages/reservation-page/reservation-page.module';
 import { LoginPageModule } from './pages/login-page/login-page.module';
@@ -23,6 +21,7 @@ import { SharedModule } from './shared/shared.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AboutUsModule } from './pages/about-us/about-us.module';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -37,7 +36,6 @@ import { AboutUsModule } from './pages/about-us/about-us.module';
     BrowserModule,
     BrowserAnimationsModule,
     SharedModule,
-    AppRoutingModule,
     HomePageModule,
     ReservationPageModule,
     LoginPageModule,
