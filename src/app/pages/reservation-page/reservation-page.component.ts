@@ -1,11 +1,11 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { ReservationService } from '../../services/reservation/reservation.service';
-import { TimeslotService } from '../../services/time-slot/timeslot.service';
+import { TimeslotService } from '../../services/timeslot/timeslot.service';
 import { IReservation, ReservationStatus } from '../../models/reservation/reservation.interface';
 import { MatDialog } from '@angular/material/dialog';
 import { ITimeslot } from '../../models/timeslot/timeslot.interface';
 import { DisabledTimeslot } from '../../models/disabledTimeslot/disabledTimeslot.interface';
-import { DisabledTimeslotService } from '../../services/disabled-Timeslot/disabledTimeslot.service';
+import { DisabledTimeslotService } from '../../services/disabledTimeslot/disabledTimeslot.service';
 import { ActivatedRoute } from '@angular/router';
 import { ReservationConfirmationDialogComponent } from '../../components/reservationConfirmationDialog/reservationConfirmationDialog.component';
 import { ReservationFormComponent } from '../../components/reservation-form/reservation-form.component';

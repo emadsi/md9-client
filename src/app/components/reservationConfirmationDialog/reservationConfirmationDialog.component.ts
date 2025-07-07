@@ -1,6 +1,6 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { TimeslotService } from '../../services/time-slot/timeslot.service';
+import { TimeslotService } from '../../services/timeslot/timeslot.service';
 import { IReservation } from '../../models/reservation/reservation.interface';
 
 @Component({
