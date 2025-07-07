@@ -1,27 +1,43 @@
 import { Routes } from "@angular/router";
-import { HomePageComponent } from "./pages/home-page/home-page.component";
-import { LoginPageComponent } from "./pages/login-page/login-page.component";
-import { AdminPageComponent } from "./pages/admin-page/admin-page.component";
-import { CancellationPageComponent } from "./pages/cancellation-page/cancellation-page.component";
-import { PaymentPageComponent } from "./pages/payment-page/payment-page.component";
-import { ReservationPageComponent } from "./pages/reservation-page/reservation-page.component";
 import { TimeslotComponent } from "./components/timeslot/timeslot.component";
 import { AuthGuard } from "./guards/authGuard/auth.guard";
-import { FootballSchoolComponent } from "./pages/football-school/football-school.component";
-import { GalleryComponent } from "./pages/gallery/gallery.component";
-import { ContactUsComponent } from "./pages/contact-us/contact-us.component";
-import { AboutUsComponent } from "./pages/about-us/about-us.component";
 
 export const routes: Routes = [
-  { path: '', component: HomePageComponent },
-  { path: 'reservation/:fieldId', component: ReservationPageComponent },
-  { path: 'school', component: FootballSchoolComponent },
-  { path: 'gallery', component: GalleryComponent },
-  { path: 'contact', component: ContactUsComponent },
-  { path: 'about', component: AboutUsComponent },
-  { path: 'login', component: LoginPageComponent },
-  // { path: 'payment', component: PaymentPageComponent },
-  { path: 'cancel', component: CancellationPageComponent },
-  { path: 'admin', component: AdminPageComponent, canActivate: [AuthGuard] },
-  { path: 'timeslot', component: TimeslotComponent},
+  { 
+    path: '', 
+    loadChildren: () => import('./pages/home-page/home-page.module').then(m => m.HomePageModule) 
+  },
+  { 
+    path: 'reservation/:fieldId', 
+    loadChildren: () => import('./pages/reservation-page/reservation-page.module').then(m => m.ReservationPageModule)
+  },
+  { 
+    path: 'school', 
+    loadChildren: () => import('./pages/football-school/football-school.module').then(m => m.FootballSchoolModule)
+  },
+  { 
+    path: 'gallery', 
+    loadChildren: () => import('./pages/gallery/gallery.module').then(m => m.GalleryModule)
+  },
+  { 
+    path: 'contact', 
+    loadChildren: () => import('./pages/contact-us/contact-us.module').then(m => m.ContactUsModule)
+  },
+  { 
+    path: 'login', 
+    loadChildren: () => import('./pages/login-page/login-page.module').then(m => m.LoginPageModule)
+  },
+  { 
+    path: 'cancel', 
+    loadChildren: () => import('./pages/cancellation-page/cancellation-page.module').then(m => m.CancellationPageModule)
+  },
+  { 
+    path: 'admin', 
+    loadChildren: () => import('./pages/admin-page/admin-page.module').then(m => m.AdminPageModule), 
+    canActivate: [AuthGuard] 
+  },
+  { path: 'about', 
+    loadChildren: () => import('./pages/about-us/about-us.module').then(m => m.AboutUsModule)
+  },
+  { path: 'timeslot', component: TimeslotComponent}
 ];

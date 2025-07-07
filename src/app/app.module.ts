@@ -1,103 +1,57 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule, provideClientHydration } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './components/header/header.component';
-import { FooterComponent } from './components/footer/footer.component';
-import { HomePageComponent } from './pages/home-page/home-page.component';
-import { ReservationPageComponent } from './pages/reservation-page/reservation-page.component';
-import { PaymentPageComponent } from './pages/payment-page/payment-page.component';
-import { CancellationPageComponent } from './pages/cancellation-page/cancellation-page.component';
-import { AdminPageComponent } from './pages/admin-page/admin-page.component';
-import { ReservationFormComponent } from './components/reservation-form/reservation-form.component';
-import { PaymentFormComponent } from './components/payment-form/payment-form.component';
 import { AdminService } from './services/admin/admin.service';
 import { ReservationService } from './services/reservation/reservation.service';
-import { LoginPageComponent } from './pages/login-page/login-page.component';
-import { FieldReservationComponent } from './components/field-reservation/field-reservation.component';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { provideHttpClient, withFetch, withInterceptors } from '@angular/common/http';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatInputModule } from '@angular/material/input';
-import { MatButtonModule } from '@angular/material/button';
-import { MatDatepickerModule } from '@angular/material/datepicker';
-import { MatSelectModule } from '@angular/material/select';
-import { MatNativeDateModule } from '@angular/material/core';
-import { MatSidenavModule } from '@angular/material/sidenav';
-import { MatTableModule } from '@angular/material/table';
-import { provideRouter } from '@angular/router';
-import { routes } from './app.routes';
-import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { TimeslotComponent } from './components/timeslot/timeslot.component';
-import { ConfirmationNumberComponent } from './components/confirmation-number/confirmation-number.component';
-import { ViewReservationsComponent } from './components/view-reservations/view-reservations.component';
 import { BlockTimeslotsComponent } from './components/block-timeslots/block-timeslots.component';
 import { AddTimeslotsComponent } from './components/add-timeslots/add-timeslots.component';
 import { ConfirmPaymentsComponent } from './components/confirm-payments/confirm-payments.component';
-import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { BlockDialogComponent } from './components/block-dialog/block-dialog.component';
-import { MatDialogModule } from '@angular/material/dialog';
-import { AdminRegisterComponent } from './components/admin-register/admin-register.component';
 import { AuthInterceptor } from './interceptors/auth.interceptor';
-import { FootballSchoolComponent } from './pages/football-school/football-school.component';
-import { GalleryComponent } from './pages/gallery/gallery.component';
-import { ContactUsComponent } from './pages/contact-us/contact-us.component';
 import { AboutUsComponent } from './pages/about-us/about-us.component';
-import { MatTabsModule } from '@angular/material/tabs';
+import { HomePageModule } from './pages/home-page/home-page.module';
+import { ReservationPageModule } from './pages/reservation-page/reservation-page.module';
+import { LoginPageModule } from './pages/login-page/login-page.module';
+import { GalleryModule } from './pages/gallery/gallery.module';
+import { FootballSchoolModule } from './pages/football-school/football-school.module';
+import { CancellationPageModule } from './pages/cancellation-page/cancellation-page.module';
+import { ContactUsModule } from './pages/contact-us/contact-us.module';
+import { AdminPageModule } from './pages/admin-page/admin-page.module';
+import { SharedModule } from './shared/shared.module';
+import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AboutUsModule } from './pages/about-us/about-us.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent,
-    FooterComponent,
-    HomePageComponent,
-    ReservationPageComponent,
-    PaymentPageComponent,
-    CancellationPageComponent,
-    AdminPageComponent,
-    ReservationFormComponent,
-    PaymentFormComponent,
-    LoginPageComponent,
-    FieldReservationComponent,
     TimeslotComponent,
-    ConfirmationNumberComponent,
-    ViewReservationsComponent,
     BlockTimeslotsComponent,
     AddTimeslotsComponent,
     ConfirmPaymentsComponent,
-    BlockDialogComponent,
-    AdminRegisterComponent,
-    FootballSchoolComponent,
-    GalleryComponent,
-    ContactUsComponent,
-    AboutUsComponent
+    BlockDialogComponent
   ],
   imports: [
-    AppRoutingModule,
     BrowserModule,
-    FormsModule,
-    ReactiveFormsModule,
     BrowserAnimationsModule,
-    MatSidenavModule,
-    MatTableModule,
-    MatDialogModule,
-    MatFormFieldModule,
-    MatInputModule,
-    MatButtonModule,
-    MatDatepickerModule,
-    MatNativeDateModule,
-    MatSelectModule,
-    MatProgressSpinnerModule,
-    MatTabsModule
+    SharedModule,
+    AppRoutingModule,
+    HomePageModule,
+    ReservationPageModule,
+    LoginPageModule,
+    GalleryModule,
+    FootballSchoolModule,
+    CancellationPageModule,
+    ContactUsModule,
+    AdminPageModule,
+    AboutUsModule
   ],
   providers: [
     AdminService,
     ReservationService,
-    provideHttpClient(withInterceptors([AuthInterceptor]), withFetch()),
-    // provideRouter(routes),
-    // provideClientHydration(),
-    // provideAnimationsAsync()
+    provideHttpClient(withInterceptors([AuthInterceptor]), withFetch())
   ],
   bootstrap: [AppComponent]
 })

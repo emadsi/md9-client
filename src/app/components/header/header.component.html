@@ -1,15 +1,16 @@
 <header class="header">
   <h1><a href="/"> Welcome to MD9</a></h1>
   <div>
-    <mat-tab-group backgroundColor="primary">
-      <mat-tab label="Reserve Field" (click)="navigateTo('/')"></mat-tab>
-      <mat-tab
-        label="Football School"
-        (click)="handleFootballAcademy()"
-      ></mat-tab>
-      <mat-tab label="Gallery" (click)="navigateTo('/gallery')"></mat-tab>
-      <mat-tab label="Contact Us" (click)="navigateTo('/contact')"></mat-tab>
-      <mat-tab label="About Us" (click)="navigateTo('/about')"></mat-tab>
+    <mat-tab-group
+      backgroundColor="primary"
+      [selectedIndex]="selectedTabIndex"
+      (selectedIndexChange)="onTabChange($event)"
+    >
+      <mat-tab label="حجز ملعب"></mat-tab>
+      <mat-tab label="تسجيل للاكاديمية"></mat-tab>
+      <mat-tab label="معرض الصور"></mat-tab>
+      <mat-tab label="تواصل معنا"></mat-tab>
+      <mat-tab label="من نحن؟"></mat-tab>
     </mat-tab-group>
   </div>
   <div>

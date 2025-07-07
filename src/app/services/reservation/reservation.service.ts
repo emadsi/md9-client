@@ -3,7 +3,6 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable, catchError, of, throwError } from 'rxjs';
 import { IReservation } from '../../models/reservation/reservation.interface';
 import { environment } from '../../../environments/environment';
-import { Cancellation } from '../../models/cancellation/cancellation.interface';
 
 @Injectable({
   providedIn: 'root'
