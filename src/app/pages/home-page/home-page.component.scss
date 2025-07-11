@@ -12,6 +12,11 @@
       flex-direction: row;
       align-items: center;
       text-align: center;
+
+      @media (max-width: 768px) {
+        flex-direction: column;
+        gap: 20px;
+      }
     }
 
     .field-reservation {

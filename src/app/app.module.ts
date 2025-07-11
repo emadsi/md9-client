@@ -21,6 +21,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AboutUsModule } from './pages/about-us/about-us.module';
 import { RouterModule } from '@angular/router';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,8 @@ import { RouterModule } from '@angular/router';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    AppRoutingModule,
+    RouterModule,
     SharedModule,
     HomePageModule,
     ReservationPageModule,

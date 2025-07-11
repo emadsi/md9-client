@@ -1,4 +1,6 @@
 <div class="field-reservation">
-    <img class="field-image" src="{{imagePath}}" alt="{{fieldName}}" class="field-image" />
-    <button class="reserve-button" (click)="handleReserve()"> Reserve {{fieldName}} </button>
+  <img class="field-image" [src]="imagePath" [alt]="fieldName" />
+  <button class="reserve-button" (click)="handleReserve()">
+    Reserve {{ fieldName }}
+  </button>
 </div>

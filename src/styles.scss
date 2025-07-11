@@ -1,32 +1,65 @@
-/* You can add global styles to this file, and also import other style files */
-/* Global Styles */
+// /* You can add global styles to this file, and also import other style files */
+// /* Global Styles */
+
+// html, body {
+//   margin: 0;
+//   padding: 0;
+//   height: 100%;
+//   font-family: Roboto, "Helvetica Neue", sans-serif;
+//   overflow: hidden; // Prevent full page scroll, we'll scroll inside main
+// }
+
+// .container {
+//   display: flex;
+//   flex-direction: column;
+//   height: 100vh;
+// }
+
+// main {
+//   padding-top: 80px; // Ensures room below sticky header  
+//   background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('./assets/images/MD9.jpg');
+//   background-attachment: fixed;
+//   background-size: cover;
+//   background-position: center;
+//   padding: 20px;
+//   flex: 1 1 auto;
+//   overflow-y: auto;
+// }
+
+
+
+// html, body { height: 100%; }
+// body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
 
 html, body {
   margin: 0;
   padding: 0;
   height: 100%;
   font-family: Roboto, "Helvetica Neue", sans-serif;
-  overflow: hidden; // Prevent full page scroll, we'll scroll inside main
 }
 
-.container {
+body {
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  min-height: 100vh;
 }
 
-main {
-  padding-top: 80px; // Ensures room below sticky header  
-  background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('./assets/images/MD9.jpg');
+app-root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Allow scrolling inside main */
+main.main-content {
+  flex: 1;
+  padding-top: 80px; // Adjust for header height
+  padding-bottom: 20px;
+  background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('/assets/images/MD9.jpg');
   background-attachment: fixed;
   background-size: cover;
   background-position: center;
-  padding: 20px;
-  flex: 1 1 auto;
   overflow-y: auto;
+  // margin-top: 60px;
 }
-
-
-
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

@@ -1,24 +1,82 @@
-<header class="header">
-  <h1><a href="/"> Welcome to MD9</a></h1>
-  <div>
-    <mat-tab-group
-      backgroundColor="primary"
-      [selectedIndex]="selectedTabIndex"
-      (selectedIndexChange)="onTabChange($event)"
-    >
-      <mat-tab label="حجز ملعب"></mat-tab>
-      <mat-tab label="تسجيل للاكاديمية"></mat-tab>
-      <mat-tab label="معرض الصور"></mat-tab>
-      <mat-tab label="تواصل معنا"></mat-tab>
-      <mat-tab label="من نحن؟"></mat-tab>
-    </mat-tab-group>
-  </div>
-  <div>
-    <button *ngIf="isAdminLogged" class="admin-logout" (click)="logout()">
-      Logout
-    </button>
-    <button class="admin-button" (click)="handleAdminLogin()">
-      Admin Zone
-    </button>
-  </div>
-</header>
+<!-- <mat-toolbar class="header" color="primary">
+  <button mat-icon-button (click)="sidenav.toggle()">
+    <mat-icon>{{ sidenav.opened ? "close" : "menu" }}</mat-icon>
+  </button>
+  <span class="app-title">MD9</span>
+
+  <span class="spacer"></span>
+
+  <button *ngIf="isAdminLogged" class="admin-logout" (click)="logout()">
+    Logout
+  </button>
+  <button class="admin-button" (click)="handleAdminLogin()">Admin Zone</button>
+</mat-toolbar>
+
+<mat-sidenav-container class="nav-container">
+  <mat-sidenav
+    #sidenav
+    mode="over"
+    position="start"
+    [autoFocus]="false"
+    [fixedInViewport]="true"
+    hasBackdrop
+  >
+    <mat-nav-list class="navbar-list">
+      <a mat-list-item (click)="navigateTo('/', sidenav)">حجز ملعب</a>
+      <a mat-list-item (click)="navigateTo('/school', sidenav)"
+        >تسجيل للاكاديمية</a
+      >
+      <a mat-list-item (click)="navigateTo('/gallery', sidenav)">معرض الصور</a>
+      <a mat-list-item (click)="navigateTo('/contact', sidenav)">تواصل معنا</a>
+      <a mat-list-item (click)="navigateTo('/about', sidenav)">من نحن؟</a>
+    </mat-nav-list>
+  </mat-sidenav>
+</mat-sidenav-container> -->
+
+<mat-toolbar class="header" color="primary">
+  <button *ngIf="isMobile" mat-icon-button (click)="toggleSidenav()">
+    <mat-icon>{{ sidenavOpened ? "close" : "menu" }}</mat-icon>
+  </button>
+
+  <span class="app-title">MD9</span>
+
+  <span class="spacer"></span>
+
+  <button *ngIf="isAdminLogged" class="admin-logout" (click)="logout()">
+    Logout
+  </button>
+  <button class="admin-button" (click)="handleAdminLogin()">Admin Zone</button>
+</mat-toolbar>
+
+<!-- Responsive mobile sidenav -->
+<mat-sidenav-container *ngIf="isMobile" class="nav-container">
+  <mat-sidenav #sidenav mode="over" [(opened)]="sidenavOpened" hasBackdrop>
+    <mat-nav-list class="navbar-list">
+      <a
+        mat-list-item
+        [class.active]="selectedTabIndex === 0"
+        (click)="navigateTo('/')"
+        >حجز ملعب
+      </a>
+      <a mat-list-item (click)="navigateTo('/school')">تسجيل للاكاديمية</a>
+      <a mat-list-item (click)="navigateTo('/gallery')">معرض الصور</a>
+      <a mat-list-item (click)="navigateTo('/contact')">تواصل معنا</a>
+      <a mat-list-item (click)="navigateTo('/about')">من نحن؟</a>
+    </mat-nav-list>
+  </mat-sidenav>
+</mat-sidenav-container>
+
+<!-- Desktop tab group -->
+<div class="nav-wrapper" *ngIf="!isMobile">
+  <mat-tab-group
+    backgroundColor="primary"
+    [selectedIndex]="selectedTabIndex"
+    (selectedIndexChange)="onTabChange($event)"
+  >
+    <mat-tab label="حجز ملعب"></mat-tab>
+    <mat-tab label="تسجيل للاكاديمية"></mat-tab>
+    <mat-tab label="معرض الصور"></mat-tab>
+    <mat-tab label="تواصل معنا"></mat-tab>
+    <mat-tab label="من نحن؟"></mat-tab>
+  </mat-tab-group>
+</div>

@@ -1,72 +1,14 @@
-// :host {
-//     .header {
-//         display: flex;
-//         justify-content: space-between;
-//         padding: 20px;
-//         background-color: #40678f;
-//         color: white;
-//         position: fixed;
-//         top: 0;
-//         left: 0;
-//         right: 0;
-//         z-index: 1000;
-//         height: 55px;
-//         align-items: center;
-    
-//         a {
-//           text-decoration: none;
-//         }
-    
-//         a:visited {
-//           color: white
-//         }
-//     }
-    
-//     .welcome-button {
-//         border: none;
-//         background: transparent;
-//         color: white;
-//     }
-      
-//     .admin-button {
-//         padding: 10px 20px;
-//         background-color: #32a43b;
-//         color: white;
-//         border: none;
-//         cursor: pointer;
-//     }
-
-//     .admin-logout {
-//       padding: 10px 20px;
-//         background-color: red;
-//         color: white;
-//         border: none;
-//         cursor: pointer;
-//     }
-// }
-
 :host {
   .header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 60px;
+    position: relative;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 30px;
-    background-color: #1f2d3d;
-    color: #ffffff;
+    padding: 0 16px;
+    height: 60px;
     z-index: 1000;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
-
-    a {
-      color: #ffffff;
-      font-weight: bold;
-      text-decoration: none;
-      font-size: 1.2rem;
-    }
+    background-color: #1f2d3d;
+    color: white;
   }
 
   .admin-button {
@@ -97,6 +39,74 @@
 
     &:hover {
       background-color: #c0392b;
+    }
+  }
+  
+  .nav-wrapper {
+    position: sticky;
+    top: 60px; // below toolbar
+    z-index: 999;
+    background-color: #1f2d3d;
+    color: white;
+  }
+
+  .navbar-list a {
+    color: white;
+    font-size: 18px;
+    padding: 12px 16px;
+    display: block;
+    text-decoration: none;
+  }
+  
+  .navbar-list a:hover {
+    background-color: #2a3b4c;
+  }
+
+  mat-tab-group {
+    width: 100%;
+  }
+  
+  .nav-container {
+    width: 100%;
+    height: auto;
+    position: relative;
+    z-index: 1000;
+  }
+
+  mat-sidenav {
+    position: fixed;
+    width: 250px;
+    background-color: #1f2d3d !important;
+    color: white !important;
+    padding-top: 60px; // space for toolbar
+    z-index: 1001;
+  }
+
+  mat-nav-list {
+    background-color: inherit;
+  }
+  
+  .app-title {
+    font-weight: bold;
+  }
+  
+  .spacer {
+    flex: 1;
+  }  
+
+  a.mat-list-item.active {
+    background-color: #2c3e50;
+    font-weight: bold;
+  }
+
+  @media screen and (max-width: 991px) {
+    mat-tab-group {
+      display: none;
+    }
+  
+    .mat-toolbar .admin-button {
+      font-size: 14px;
+      padding: 4px 8px;
     }
   }
 }
